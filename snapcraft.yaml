@@ -1,0 +1,18 @@
+name: liri-app
+version: 0.10.0
+summary: Cloud part for apps using the Liri Platform snap
+description: |
+  Helper for Liri Apps depending on the Liri Platform snap.
+  Includes a specific launcher and Snapcraft configuration
+  to deduplicate build configurations.
+confinement: strict
+grade: devel
+parts:
+  liri-app:
+    plugin: dump
+    source: src
+    organize:
+      launcher.sh: bin/launch
+    install: |
+      mkdir $SNAPCRAFT_PART_INSTALL/liri-platform
+    prime: [-src]
