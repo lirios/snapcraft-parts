@@ -12,7 +12,8 @@ parts:
     plugin: dump
     source: src
     organize:
-      launcher.sh: bin/launch
+      launcher.sh: bin/liri-app-launch
     install: |
       mkdir $SNAPCRAFT_PART_INSTALL/liri-platform
     prime: [-src]
+
