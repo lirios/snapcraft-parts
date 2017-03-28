@@ -4,7 +4,7 @@ Snapcraft cloud part for apps using the [Liri Platform snap](https://github.com/
 ### Usage
 
 In your `snapcraft.yaml`, add the `liri-app` part to the list of `after` parts.
-You can then use the `liri-app-launch-command` to run your application with
+You can then use the `liri-app-launch` command to run your application with
 the Liri Platform snap.
 ```yaml
 apps:
