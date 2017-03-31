@@ -19,9 +19,7 @@ parts:
       touch $SNAPCRAFT_PART_INSTALL/meta/platform.yaml
       echo 'minimum-version: "0.10.0"' >> $SNAPCRAFT_PART_INSTALL/meta/platform.yaml
     prime: [-src]
-  liri-platform:
-    plugin: nil
-  v0.10.0:
+  liri-platform-v0.10.0:
     plugin: dump
     source: src
     organize:
