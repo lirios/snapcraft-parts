@@ -30,7 +30,7 @@ fi
 # Check for platform snap version
 
 platform_version=$(exec $RUNTIME/bin/yaml r $RUNTIME/meta/snap.yaml version)
-expected_version=$(exec $RUNTIME/bin/yaml r $SNAP/meta/snap.yaml plugs.platform.minimum-version)
+expected_version=$(exec $RUNTIME/bin/yaml r $SNAP/meta/platform.yaml minimum-version)
 if version_lt $platform_version $expected_version; then
     dialog_title="Liri Platform Update Required"
     dialog_message="This application requires a newer Liri Platform snap version ($expected_version). "

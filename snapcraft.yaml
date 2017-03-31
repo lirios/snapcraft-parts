@@ -15,5 +15,21 @@ parts:
       launcher.sh: bin/liri-app-launch
     install: |
       mkdir $SNAPCRAFT_PART_INSTALL/liri-platform
+      mkdir $SNAPCRAFT_PART_INSTALL/meta
+      touch $SNAPCRAFT_PART_INSTALL/meta/platform.yaml
+      echo 'minimum-version: "0.10.0"' >> $SNAPCRAFT_PART_INSTALL/meta/platform.yaml
+    prime: [-src]
+  liri-platform:
+    plugin: nil
+  v0.10.0:
+    plugin: dump
+    source: src
+    organize:
+      launcher.sh: bin/liri-app-launch
+    install: |
+      mkdir $SNAPCRAFT_PART_INSTALL/liri-platform
+      mkdir $SNAPCRAFT_PART_INSTALL/meta
+      touch $SNAPCRAFT_PART_INSTALL/meta/platform.yaml
+      echo 'minimum-version: "0.10.0"' >> $SNAPCRAFT_PART_INSTALL/meta/platform.yaml
     prime: [-src]
 
