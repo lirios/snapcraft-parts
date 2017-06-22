@@ -18,4 +18,13 @@ parts:
       mkdir $SNAPCRAFT_PART_INSTALL/meta
       touch $SNAPCRAFT_PART_INSTALL/meta/platform.yaml
       echo 'minimum-version: "0.10.0"' >> $SNAPCRAFT_PART_INSTALL/meta/platform.yaml
-    prime: [-src]
+    stage:
+      - bin/liri-app-launch
+    after: [liri-platform-qt-conf-internal]
+  liri-platform-qt-conf-internal:
+    plugin: dump
+    source: src
+    organize:
+      qt.conf: bin/qt.conf
+    stage:
+      - bin/qt.conf
