@@ -20,5 +20,7 @@ parts:
       launcher.sh: bin/liri-app-launch
       qt.conf: bin/qt.conf
     stage:
+      - meta/
+      - liri-platform/
       - bin/liri-app-launch
       - bin/qt.conf
