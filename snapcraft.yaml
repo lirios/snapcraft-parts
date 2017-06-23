@@ -24,3 +24,10 @@ parts:
       - liri-platform/
       - bin/liri-app-launch
       - bin/qt.conf
+  liri-platform-ext-libgl-software:
+    plugin: dump
+    source: src
+    organize:
+      ext/libgl-software.sh: bin/ext/libgl-software.sh
+    stage:
+      - bin/ext/libgl-software.sh

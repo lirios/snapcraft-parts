@@ -60,6 +60,14 @@ if version_lt $platform_version $expected_version; then
     exit 1
 fi
 
+# Run custom launcher extensions
+
+if [ -d $SNAP/bin/ext ]; then
+    for script in $SNAP/bin/ext/*.sh; do
+        source "$script"
+    done
+fi
+
 # Source liri-app-launch to run the application
 
 source $RUNTIME/bin/liri-app-launch "$@"
