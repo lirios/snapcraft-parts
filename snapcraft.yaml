@@ -11,20 +11,14 @@ parts:
   liri-platform-v0.10.0:
     plugin: dump
     source: src
-    organize:
-      launcher.sh: bin/liri-app-launch
     install: |
       mkdir $SNAPCRAFT_PART_INSTALL/liri-platform
       mkdir $SNAPCRAFT_PART_INSTALL/meta
       touch $SNAPCRAFT_PART_INSTALL/meta/platform.yaml
       echo 'minimum-version: "0.10.0"' >> $SNAPCRAFT_PART_INSTALL/meta/platform.yaml
-    stage:
-      - bin/liri-app-launch
-    after: [liri-platform-qt-conf-internal]
-  liri-platform-qt-conf-internal:
-    plugin: dump
-    source: src
     organize:
+      launcher.sh: bin/liri-app-launch
       qt.conf: bin/qt.conf
     stage:
+      - bin/liri-app-launch
       - bin/qt.conf
