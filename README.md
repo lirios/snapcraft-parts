@@ -1,7 +1,12 @@
-## Snapcraft Cloud Part
-Snapcraft cloud part for apps using the [Liri Platform snap](https://github.com/lirios/platform-snap)
+## Snapcraft Cloud Parts
+Snapcraft cloud parts for snaps using the [Liri Platform snap](https://github.com/lirios/platform-snap)
 
 ### Usage
+
+#### Liri Platform
+
+The Liri Platform cloud parts make it a lot easier to launch snap applications
+depending on the Liri Platform snap.
 
 In your `snapcraft.yaml`, add the `liri-platform-<version>` part to the list of
 `after` parts.
@@ -20,3 +25,12 @@ parts:
 
 Available versions:
   * `liri-platform-v0.10.0`
+
+#### Extensions
+
+In addition to the main Liri Platform cloud parts, the launch behaivor
+can be customized using the following extension parts:
+
+`liri-platform-ext-libgl-software`: Launcher extension to workaround
+[QtWebEngine crash with Nouveau graphic drivers](https://bugreports.qt.io/browse/QTBUG-41242)
+ by forcing software rendering.
