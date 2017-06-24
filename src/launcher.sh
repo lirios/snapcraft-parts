@@ -17,7 +17,7 @@ version_lt() {  # is version $1 lesser than $2
 
 snap_root_path=$(realpath $SNAP/../../)
 
-[ -r $snap_root_path ] && IS_CLASSIC=yes || IS_CLASSIC=no
+[ -r /usr ] && IS_CLASSIC=yes || IS_CLASSIC=no
 
 # Ensure that the Liri Platform is connected
 
