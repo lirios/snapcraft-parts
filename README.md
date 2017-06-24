@@ -34,3 +34,5 @@ can be customized using the following extension parts:
 * `liri-platform-ext-libgl-software`: Launcher extension to workaround
 [QtWebEngine crash with Nouveau graphic drivers](https://bugreports.qt.io/browse/QTBUG-41242)
  by forcing software rendering.
+* `liri-platform-ext-snap-classic`: Launcher extension to make classic snaps
+launch properly.
