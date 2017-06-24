@@ -13,15 +13,19 @@ version_lt() {  # is version $1 lesser than $2
     [ "$1" = "$2" ] && return 1 || version_lte $1 $2
 }
 
-# Check if snap is classic or confined
+# Run custom launcher extensions
+
+if [ -d $SNAP/bin/ext ]; then
+    for script in $SNAP/bin/ext/*.sh; do
+        source "$script"
+    done
+fi
 
 snap_root_path=$(realpath $SNAP/../../)
 
-[ -r /usr ] && IS_CLASSIC=yes || IS_CLASSIC=no
-
 # Ensure that the Liri Platform is connected
 
-if [ "$IS_CLASSIC" = yes ]; then
+if [ -n "$SNAP_IS_CLASSIC" ]; then
     if [ -d $snap_root_path/$platform_snap_name ]; then
         RUNTIME=$snap_root_path/$platform_snap_name/current
     else
@@ -58,14 +62,6 @@ if version_lt $platform_version $expected_version; then
     dialog_code="snap refresh $platform_snap_name # use sudo if necessary"
     source $RUNTIME/bin/liri-app-launch $RUNTIME/bin/fluid-dialog "$dialog_title" "$dialog_message" --code "$dialog_code"
     exit 1
-fi
-
-# Run custom launcher extensions
-
-if [ -d $SNAP/bin/ext ]; then
-    for script in $SNAP/bin/ext/*.sh; do
-        source "$script"
-    done
 fi
 
 # Source liri-app-launch to run the application

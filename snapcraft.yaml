@@ -31,3 +31,10 @@ parts:
       ext/libgl-software.sh: bin/ext/libgl-software.sh
     stage:
       - bin/ext/libgl-software.sh
+  liri-platform-ext-snap-classic:
+    plugin: dump
+    source: src
+    organize:
+      ext/snap-classic.sh: bin/ext/snap-classic.sh
+    stage:
+      - bin/ext/snap-classic.sh
