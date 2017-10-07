@@ -66,4 +66,4 @@ fi
 
 # Source liri-app-launch to run the application
 
-source $RUNTIME/bin/liri-app-launch "$@"
+exec $RUNTIME/bin/liri-app-launch "$@"
