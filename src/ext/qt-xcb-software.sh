@@ -2,7 +2,7 @@
 
 # Launcher extension to workaround QtWebEngine
 # crash with Nouveau graphic drivers by forcing
-# software rendering:
+# Qt xcb software rendering:
 # https://bugreports.qt.io/browse/QTBUG-41242
 
-export LIBGL_ALWAYS_SOFTWARE=1
+export QT_XCB_FORCE_SOFTWARE_OPENGL=1

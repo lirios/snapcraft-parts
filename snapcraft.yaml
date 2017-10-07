@@ -24,13 +24,13 @@ parts:
       - liri-platform/
       - bin/liri-app-launch
       - bin/qt.conf
-  liri-platform-ext-libgl-software:
+  liri-platform-ext-qt-xcb-software:
     plugin: dump
     source: src
     organize:
-      ext/libgl-software.sh: bin/ext/libgl-software.sh
+      ext/qt-xcb-software.sh: bin/ext/qt-xcb-software.sh
     stage:
-      - bin/ext/libgl-software.sh
+      - bin/ext/qt-xcb-software.sh
   liri-platform-ext-snap-classic:
     plugin: dump
     source: src
