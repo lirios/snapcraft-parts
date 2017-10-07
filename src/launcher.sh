@@ -1,17 +1,7 @@
 #!/bin/bash
 
 # Variables
-platform_snap_name="liri-platform0"
-
-# Version utilites
-
-version_lte() {  # is version $1 lesser than or equal to $2
-    [  "$1" = "`echo -e "$1\n$2" | sort -V | head -n1`" ]
-}
-
-version_lt() {  # is version $1 lesser than $2
-    [ "$1" = "$2" ] && return 1 || version_lte $1 $2
-}
+platform_snap_name=$(cat $SNAP/meta/platform)
 
 # Run custom launcher extensions
 
@@ -47,21 +37,6 @@ else
         exit 1
       fi
     fi
-fi
-
-# Check for platform snap version
-
-platform_version=$(exec $RUNTIME/bin/yaml r $RUNTIME/meta/snap.yaml version)
-expected_version=$(exec $RUNTIME/bin/yaml r $SNAP/meta/platform.yaml minimum-version)
-if version_lt $platform_version $expected_version; then
-    dialog_title="Liri Platform Update Required"
-    dialog_message="This application requires a newer Liri Platform snap version ($expected_version). "
-    dialog_message+="You have version $platform_version installed. "
-    dialog_message+="Please update the Liri Platform snap package using your software "
-    dialog_message+="store application or run the following command in a terminal:"
-    dialog_code="snap refresh $platform_snap_name # use sudo if necessary"
-    source $RUNTIME/bin/liri-app-launch $RUNTIME/bin/fluid-dialog "$dialog_title" "$dialog_message" --code "$dialog_code"
-    exit 1
 fi
 
 # Export RUNTIME and run the platform snap launcher

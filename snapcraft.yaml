@@ -1,21 +1,18 @@
-name: liri-app
-version: 0.10.0
+name: snapcraft-parts
+version: 0
 summary: Cloud part for apps using the Liri Platform snap
 description: |
   Helper for Liri Apps depending on the Liri Platform snap.
   Includes a specific launcher and Snapcraft configuration
   to deduplicate build configurations.
-confinement: strict
-grade: devel
 parts:
-  liri-platform-v0.10.0:
+  liri-platform-0-9:
     plugin: dump
     source: src
     install: |
       mkdir $SNAPCRAFT_PART_INSTALL/liri-platform
       mkdir $SNAPCRAFT_PART_INSTALL/meta
-      touch $SNAPCRAFT_PART_INSTALL/meta/platform.yaml
-      echo 'minimum-version: "0.10.0"' >> $SNAPCRAFT_PART_INSTALL/meta/platform.yaml
+      echo 'liri-platform-0-9' >> $SNAPCRAFT_PART_INSTALL/meta/platform
     organize:
       launcher.sh: bin/liri-app-launch
       qt.conf: bin/qt.conf

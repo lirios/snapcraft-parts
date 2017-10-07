@@ -24,7 +24,7 @@ parts:
 ```
 
 Available versions:
-  * `liri-platform-v0.10.0`
+  * `liri-platform-0-9`
 
 #### Extensions
 
