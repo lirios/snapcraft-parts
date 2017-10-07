@@ -64,6 +64,7 @@ if version_lt $platform_version $expected_version; then
     exit 1
 fi
 
-# Source liri-app-launch to run the application
+# Export RUNTIME and run the platform snap launcher
 
+export RUNTIME
 exec $RUNTIME/bin/liri-app-launch "$@"
