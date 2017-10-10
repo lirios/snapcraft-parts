@@ -3,14 +3,6 @@
 # Variables
 platform_snap_name=$(cat $SNAP/meta/platform)
 
-# Run custom launcher extensions
-
-if [ -d $SNAP/bin/ext ]; then
-    for script in $SNAP/bin/ext/*.sh; do
-        source "$script"
-    done
-fi
-
 snap_root_path=$(realpath $SNAP/../../)
 
 # Ensure that the Liri Platform is connected
