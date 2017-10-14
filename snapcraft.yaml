@@ -9,6 +9,7 @@ parts:
   liri-platform-0-9:
     plugin: dump
     source: src
+    build-snaps: [liri-platform-0-9/latest/edge]
     install: |
       mkdir $SNAPCRAFT_PART_INSTALL/liri-platform
       mkdir $SNAPCRAFT_PART_INSTALL/meta
