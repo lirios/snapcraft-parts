@@ -10,6 +10,11 @@ parts:
     plugin: dump
     source: src
     build-snaps: [liri-platform-0-9/latest/edge]
+    build-packages:
+      - build-essential
+      - mesa-common-dev
+      - libgl1-mesa-dev
+      - g++
     install: |
       mkdir $SNAPCRAFT_PART_INSTALL/liri-platform
       mkdir $SNAPCRAFT_PART_INSTALL/meta
