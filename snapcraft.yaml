@@ -21,7 +21,8 @@ parts:
       echo 'liri-platform-0-9' >> $SNAPCRAFT_PART_INSTALL/meta/platform
       mkdir $SNAPCRAFT_PART_INSTALL/bin
       echo '[Paths]' >> $SNAPCRAFT_PART_INSTALL/bin/qt.conf
-      echo 'Prefix = /snap/liri-platform-0-9/current/usr/lib/qt5' >> $SNAPCRAFT_PART_INSTALL/bin/qt.conf
+      echo 'Prefix = /snap/liri-platform-0-9/current/usr/lib/x86_64-linux-gnu/qt5' >> $SNAPCRAFT_PART_INSTALL/bin/qt.conf
+      echo 'Data = /snap/liri-platform-0-9/current/usr/share/qt5' >> $SNAPCRAFT_PART_INSTALL/bin/qt.conf
     organize:
       launcher.sh: bin/liri-app-launch
     stage:
